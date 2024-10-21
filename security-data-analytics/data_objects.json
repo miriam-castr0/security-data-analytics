@@ -1,0 +1,115 @@
+chunk message:
+
+{
+    "key": 48_1,
+    "message":{
+        "total_chunks": 5,
+        "chunk_sequece": 1,
+        "chunk_data":"r8UCXFqoAgA8AAAAPAAAAJCxHKLA03DzWkJz6AgARQAAKDAwAADyBvngrBAABcCoMgFopWilAAAAAAAAAABQAhb
+        QLHcAAAAAAAAAAK/FAlyKqAIAPAAAADwAAACQsRyiwNNw81pCc+gIAEUAACgwMAAA8gb54KwQAAXAqDIBAwIB0wAAAAAAAAAAUAIW0Js
+        1AAAAAAAAAACvxQJci6gCADwAAAA8AAAAkLEcosDTcPNaQnPoCABFAAAoMDAAAPIG+eCsEAAFwKgyAQMCAdMAAAAAAAAAAFACFtCbNQA
+        AAAAAAAAAr8UCXMioAgA8AAAAPAAAAJCxHKLA03DzWkJz6AgARQAAKDAwAADyBvngrBAABcCoMgGhf6BeAAAAAAAAAABQAhbQQVUAAAA
+        AAAAAAK/FAlzIqAIAPAAAADwAAACQsRyiwNNw81pCc+gIAEUAACgwMAAA8gb54KwQAAXAqD...",
+        "checksum": "097a4dd603af47b754024e3bcd83f9f0"
+    }
+
+}
+
+dpte to ade:
+
+{
+    "key":48,
+    "message": "security_data_analytics_app/src/pcap/48.pcap"
+}
+
+threat json:
+
+{
+    "id": 100,
+    "pcap_id": 48,
+    "dest_ip": "192.168.50.1",
+    "source_ip": "172.16.0.5",
+    "status": 1,  
+    "protocol": 6,
+    "ip_count": 450,
+    "timestamp": "2024-07-04T12:00:00Z", 
+    "prediciton_time": 5.3,
+    "ddos_type": 1.0,
+    "last_updated": "2024-07-04T15:30:45Z"  
+}
+
+
+models results:
+{
+    "key": "lucid",
+    "message": {
+        "prediction_time": 0.132283,
+        "accuracy": 0.998548,
+        "f1": 0.998511,
+        "true_positive_rate": 0.997338,
+        "false_positive_rate": 0.000299,
+        "true_negative_rate": 0.999701,
+        "false_negative_rate": 0.002662,
+        "precision": 0.999686,
+        "recall": 0.997338,
+        "mse": 0.001452,
+        "auc":0.99852,
+        "data_source": "10t-10n-DOS2019-dataset-test.hdf5",
+        "timestamp": "2024-07-04 12:33:41.422042"
+        }
+}
+
+{
+    "key": "rf",
+    "message": {
+        "prediction_time": 0.016496,
+        "accuracy": 0.73251,
+        "f1": 0.711959,
+        "precision":0.782289,
+        "recall": 0.73251,
+        "mse":8.230453,
+        "data_source": "10t-10n-DOS2019-dataset-multi-test.hdf6",
+        "timestamp": "2024-07-04 11:01:30.35679"
+        }
+}
+
+
+{'id': 47, 'probe_id': 2, 'filename': '/security_data_collection_app/src/udp.pcap', 'ddos_rate': 0.91, 'number_packets': 1814, 'detection_time': 8.22186803817749, 'is_analysed': True}
+
+
+
+
+
+Data frames
+
+results
+        source_ip       dest_ip         protocol    ddos_status     ddos_type   timestamp     
+0       172.16.0.5      192.168.50.4    17          True            11.0        2024-07-04 12:33:49.611393   
+1       192.168.50.4    172.16.0.5      1           False           NaN         2024-07-04 12:33:49.611393
+..            ...           ...         ...            ...          ...
+584     172.16.0.5      192.168.50.1    6           True            1.0         2024-07-04 12:33:49.611393
+585     172.16.0.5      192.168.50.1    6            False          NaN         2024-07-04 12:33:49.611393
+
+ddos rate
+            ddos_rate   ddos_flows  total_flows     timestamp        
+0           0.91        533         586             2024-07-04 12:33:49.611393
+
+DDoS Rate type list:       
+    class   rate        ddos_flows_by_class     total_flows     timestamp   
+0   MSSQL   0.039400    21                      533             2024-07-04 12:33:49.793890
+1   NTP     0.016886    9                       533             2024-07-04 12:33:49.793890
+    ...     ...         ...                     ...                       ...
+5   UDP     0.045028    24                      533             2024-07-04 12:33:49.793890
+6   UDPLag  0.022514    12                      533             2024-07-04 12:33:49.793890
+
+
+lucid tests:    
+    prediction_time     accuracy    f1          true_positive_rate  false_positive_rate  true_negative_rate  false_negative_rate  precision \
+0   0.132283            0.998548    0.998511    0.997338            0.000299             0.999701            0.002662             0.999686
+
+    recall      mse         auc         data_source                             timestamp
+0   0.997338    0.001452    0.99852     10t-10n-DOS2019-dataset-test.hdf5       2024-07-04 12:33:41.422042
+
+    prediction_time     accuracy    f1      precision   recall      mse         auc         data_source                             timestamp
+0   0.123578            0.73        0.71    0.7823      0.7325      8.2305      0.9692      10t-10n-DOS2019-dataset-test.hdf5       2024-07-04 11:01:30.35679      
+

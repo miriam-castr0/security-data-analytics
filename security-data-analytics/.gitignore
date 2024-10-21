@@ -1,0 +1,3 @@
+/src/dependencies/*
+/.idea/
+*/__pycache__/

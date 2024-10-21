@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  security-data-analytics:
+    build: .
+    ports:
+      - "5002:8050"  # Expose  the dashboard
+    env_file:
+      - .env.development
+    environment:
+      FLASK_RUN_HOST: "0.0.0.0"
+      
+    networks:
+      - closed_loop_network
+
+networks:
+  closed_loop_network:
+    driver: bridge
+    external: true
+
+
