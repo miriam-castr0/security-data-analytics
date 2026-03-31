@@ -1,6 +1,6 @@
 # Security Data Analytics
  
-Security Data Analytcis is a component designed to use Machine Learning to detect DDoS attacks. It uses an adaptation of the LUCID framework (https://github.com/doriguzzi/lucid-ddos), for the DDoS detection.
+Security Data Analytics is a component designed to use Machine Learning to detect DDoS attacks. It uses an adaptation of the LUCID framework (https://github.com/doriguzzi/lucid-ddos), for the DDoS detection.
 
 This component is a small part of a bigger framework, being developed in the European Project 6G-OPENSEC-SECURITY (https://www.cttc.cat/project/secure-network-slice-manager-for-open-and-disaggregated-6g-networks/)
 
